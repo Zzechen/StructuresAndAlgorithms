@@ -1,6 +1,6 @@
 package structires.table.doublelinked;
 
-import structires.table.List;
+import structires.collections.Collections;
 
 /**
  * Created : zzc
@@ -9,7 +9,7 @@ import structires.table.List;
  * Description :
  */
 
-public class DoubleLinkedList<E> implements List<E> {
+class DoubleLinkedList<E> implements Collections<E> {
     private Node<E> header;
     private Node<E> footer;
     private int length;
@@ -85,7 +85,7 @@ public class DoubleLinkedList<E> implements List<E> {
     }
 
     @Override
-    public boolean addAll(List<E> items) {
+    public boolean addAll(Collections<E> items) {
         if (items == null) return false;
         int size = items.size();
         for (int i = 0; i < size; i++) {
@@ -98,7 +98,7 @@ public class DoubleLinkedList<E> implements List<E> {
     }
 
     @Override
-    public boolean addAll(int index, List<E> items) {
+    public boolean addAll(int index, Collections<E> items) {
         if (index < 0 || index > length) return false;
         if (items == null) return false;
         int size = items.size();

@@ -7,7 +7,7 @@ package structires.table.doublelinked;
  * Description :
  */
 
-public class Node<E> {
+class Node<E> {
     Node<E> prev;
     E item;
     Node<E> next;

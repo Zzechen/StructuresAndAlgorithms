@@ -1,5 +1,5 @@
 ## 说明
-    自己实现java数据结构，与部分算法
+    自己实现java数据结构(一些边界为处理)，与部分算法
 ## 目录
 * [1. 数据结构](src/structires)
     * [1.表](src/structires/table)

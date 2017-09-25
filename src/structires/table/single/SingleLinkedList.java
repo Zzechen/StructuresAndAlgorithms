@@ -1,10 +1,6 @@
 package structires.table.single;
 
-import structires.table.List;
-
-import java.util.Iterator;
-import java.util.Spliterator;
-import java.util.function.Consumer;
+import structires.collections.Collections;
 
 /**
  * Created : zzc
@@ -13,7 +9,7 @@ import java.util.function.Consumer;
  * Description :
  */
 
-public class SingleLinkedList<E> implements List<E> {
+class SingleLinkedList<E> implements Collections<E> {
     private int length;
     private Node<E> header;
     private Node<E> footer;
@@ -70,7 +66,7 @@ public class SingleLinkedList<E> implements List<E> {
     }
 
     @Override
-    public boolean addAll(List<E> items) {
+    public boolean addAll(Collections<E> items) {
         if (items == null) return false;
         if (items.size() == 0) return true;
         int size = items.size();
@@ -84,7 +80,7 @@ public class SingleLinkedList<E> implements List<E> {
     }
 
     @Override
-    public boolean addAll(int index, List<E> items) {
+    public boolean addAll(int index, Collections<E> items) {
         throw new IllegalArgumentException("not impl");
     }
 

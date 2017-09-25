@@ -1,6 +1,4 @@
-package structires.table;
-
-import java.util.Iterator;
+package structires.collections;
 
 /**
  * Created : zzc
@@ -9,16 +7,16 @@ import java.util.Iterator;
  * Description :
  */
 
-public interface List<E> {
+public interface Collections<E> {
     boolean add(E item);
 
     boolean add(int index, E item);
 
     E set(int index, E item);
 
-    boolean addAll(List<E> items);
+    boolean addAll(Collections<E> items);
 
-    boolean addAll(int index, List<E> items);
+    boolean addAll(int index, Collections<E> items);
 
     boolean remove(int index);
 

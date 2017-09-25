@@ -34,8 +34,7 @@ class ArrayStack<E> implements Stack<E> {
     @Override
     public E pop() {
         if (size == 0) return null;
-        E item = (E) itemArr[--size];
-        return item;
+        return (E) itemArr[--size];
     }
 
     @Override
@@ -81,8 +80,7 @@ class ArrayStack<E> implements Stack<E> {
                 break;
             }
         }
-        if (index == -1) return false;
-        return remove(index);
+        return index == -1 ? false : remove(index);
     }
 
     @Override

@@ -4,7 +4,7 @@
 * [1. 数据结构](src/structires)
     * [1.表](src/structires/table)
         * [1.单链表](src/structires/table/single)
-        * [2.双链表](src/structires/table/double)
+        * [2.双链表](src/structires/table/doublelinked)
     * [2.栈](src/structires/stack)
     * [3.队列](src/structires/queue)
     * [4.树](src/structires/tree)

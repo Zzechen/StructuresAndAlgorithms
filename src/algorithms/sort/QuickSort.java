@@ -1,5 +1,7 @@
 package algorithms.sort;
 
+import structires.collections.Collections;
+
 /**
  * Created : zzc
  * Time : 2017/9/25
@@ -8,4 +10,11 @@ package algorithms.sort;
  */
 
 public class QuickSort {
+    public static void main(String arg[]) {
+
+    }
+
+    public static void quick(Collections<Integer> collections) {
+
+    }
 }

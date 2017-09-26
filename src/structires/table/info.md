@@ -1,5 +1,2 @@
-单链表
-
-双链表
-
-Iterable
+* [单链表](single/info.md)
+* [双链表](doublelinked/info.md)

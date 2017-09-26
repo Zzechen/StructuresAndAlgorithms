@@ -29,4 +29,7 @@ public interface Collections<E> {
     int size();
 
     boolean isEmpty();
+
+    void clear();
+
 }

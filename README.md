@@ -16,7 +16,7 @@
     * [6.图论](src/structires)
 * [2. 算法](src/algorithms)
     * [1.时间复杂度](src/algorithms/complexity)
-    * [2.排序](src/algorithms/sort)
+    * [2.排序](src/algorithms/sort/info.md)
     * [3.递归](src/algorithms/recursively)
     * [4.散列](src/algorithms/hash)
     * [5.贪婪](src/algorithms/greedy)

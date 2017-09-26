@@ -6,7 +6,7 @@ import structires.collections.Collections;
  * Created : zzc
  * Time : 2017/9/25
  * Email : zzcm159@gmail.com
- * Description :
+ * Description :冒泡排序
  */
 
 public class BubbleSort {

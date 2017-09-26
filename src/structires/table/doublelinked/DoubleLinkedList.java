@@ -9,7 +9,7 @@ import structires.collections.Collections;
  * Description :
  */
 
-class DoubleLinkedList<E> implements Collections<E> {
+public class DoubleLinkedList<E> implements Collections<E> {
     private Node<E> header;
     private Node<E> footer;
     private int length;
@@ -210,5 +210,14 @@ class DoubleLinkedList<E> implements Collections<E> {
     @Override
     public boolean isEmpty() {
         return length == 0;
+    }
+
+    @Override
+    public void clear() {
+        header.next.prev = null;
+        header.next = footer;
+        footer.prev = header;
+        footer.item = null;
+        length = 0;
     }
 }

@@ -9,7 +9,7 @@ import structires.collections.Collections;
  * Description :
  */
 
-class SingleLinkedList<E> implements Collections<E> {
+public class SingleLinkedList<E> implements Collections<E> {
     private int length;
     private Node<E> header;
     private Node<E> footer;
@@ -68,12 +68,11 @@ class SingleLinkedList<E> implements Collections<E> {
     @Override
     public boolean addAll(Collections<E> items) {
         if (items == null) return false;
-        if (items.size() == 0) return true;
         int size = items.size();
         for (int i = 0; i < size; i++) {
             E item = items.get(i);
-            if (item != null && contains(item)) {
-                return add(item);
+            if (!contains(item)) {
+                add(item);
             }
         }
         return true;
@@ -120,9 +119,10 @@ class SingleLinkedList<E> implements Collections<E> {
     @Override
     public boolean contains(E item) {
         if (item == null) return false;
-        Node<E> value = header.next;
-        for (int i = 1; i < length; i++) {
-            if (item.equals(value.item)) {
+        Node<E> value = header;
+        for (int i = 0; i < length; i++) {
+            value = value.next;
+            if (value != null && item.equals(value.item)) {
                 return true;
             }
         }
@@ -147,5 +147,12 @@ class SingleLinkedList<E> implements Collections<E> {
     @Override
     public boolean isEmpty() {
         return length == 0;
+    }
+
+    @Override
+    public void clear() {
+        header.next = footer;
+        footer.item = null;
+        length = 0;
     }
 }

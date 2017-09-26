@@ -7,7 +7,7 @@
     * [3.队列](src/structires/queue/info.md)
     * [4.树](src/structires/tree/info.md)
     * [5.集合](src/structires/collections/info.md)
-    * [6.图论](src/structires/info.md)
+   
 * [2. 算法](src/algorithms)
     * [1.时间复杂度](src/algorithms/complexity/info.md)
     * [2.排序](src/algorithms/sort/info.md)
@@ -18,3 +18,4 @@
     * [7.动态规划](src/algorithms/dynamicplan/info.md)
     * [8.随机化](src/algorithms/random/info.md)
     * [9.回溯](src/algorithms/backtracking/info.md)
+    * [10.图论](src/algorithms/graph/info.md)

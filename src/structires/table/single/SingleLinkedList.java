@@ -2,6 +2,10 @@ package structires.table.single;
 
 import structires.collections.Collections;
 
+import java.util.Iterator;
+import java.util.Spliterator;
+import java.util.function.Consumer;
+
 /**
  * Created : zzc
  * Time : 2017/9/25
@@ -154,5 +158,34 @@ public class SingleLinkedList<E> implements Collections<E> {
         header.next = footer;
         footer.item = null;
         length = 0;
+    }
+
+    @Override
+    public Iterator<E> iterator() {
+        return new Itr();
+    }
+
+    private class Itr implements Iterator<E> {
+        Node<E> cur;
+
+        public Itr() {
+            cur = header;
+        }
+
+        @Override
+        public boolean hasNext() {
+            return cur.next != null && footer.item != null;
+        }
+
+        @Override
+        public E next() {
+            cur = cur.next;
+            return cur.item;
+        }
+
+        @Override
+        public void remove() {
+            SingleLinkedList.this.remove(cur.item);
+        }
     }
 }

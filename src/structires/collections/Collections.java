@@ -7,7 +7,7 @@ package structires.collections;
  * Description :
  */
 
-public interface Collections<E> {
+public interface Collections<E> extends Iterable<E> {
     boolean add(E item);
 
     boolean add(int index, E item);

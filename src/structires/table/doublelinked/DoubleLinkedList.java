@@ -2,6 +2,8 @@ package structires.table.doublelinked;
 
 import structires.collections.Collections;
 
+import java.util.Iterator;
+
 /**
  * Created : zzc
  * Time : 2017/9/25
@@ -219,5 +221,34 @@ public class DoubleLinkedList<E> implements Collections<E> {
         footer.prev = header;
         footer.item = null;
         length = 0;
+    }
+
+    @Override
+    public Iterator<E> iterator() {
+        return new Itr();
+    }
+
+    private class Itr implements Iterator<E> {
+        Node<E> cur;
+
+        public Itr() {
+            cur = header;
+        }
+
+        @Override
+        public boolean hasNext() {
+            return cur.next != null && footer.item != null;
+        }
+
+        @Override
+        public E next() {
+            cur = cur.next;
+            return cur.item;
+        }
+
+        @Override
+        public void remove() {
+            DoubleLinkedList.this.remove(cur.item);
+        }
     }
 }

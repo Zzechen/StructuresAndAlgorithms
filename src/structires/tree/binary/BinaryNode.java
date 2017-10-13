@@ -7,7 +7,7 @@ package structires.tree.binary;
  * Description :
  */
 
-public class BinaryNode<T extends Comparable> {
+class BinaryNode<T extends Comparable> {
     T value;
     BinaryNode<T> leftChild;
     BinaryNode<T> rightChild;

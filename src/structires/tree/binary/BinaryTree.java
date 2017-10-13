@@ -2,6 +2,8 @@ package structires.tree.binary;
 
 import structires.tree.Tree;
 
+import javax.swing.tree.TreeNode;
+
 /**
  * Created : zzc
  * Time : 2017/10/12
@@ -12,7 +14,7 @@ import structires.tree.Tree;
 public class BinaryTree<T extends Comparable> implements Tree<T> {
     private BinaryNode<T> rootNode;
     private int length;
-    private int height;
+    private int height;//todo +
 
     public BinaryTree() {
         rootNode = new BinaryNode<>();
@@ -50,13 +52,32 @@ public class BinaryTree<T extends Comparable> implements Tree<T> {
         }
     }
 
-    private void insert(BinaryNode<T> cur, T value) {
-
+    private boolean insert(BinaryNode<T> cur, T value) {
+        if (cur.value.compareTo(value) == 0) {
+            return false;
+        } else {
+            boolean left = cur.value.compareTo(value) > 0;
+            BinaryNode<T> child = left ? cur.leftChild : cur.rightChild;
+            if (child == null) {
+                child = new BinaryNode<>();
+                child.value = value;
+                if (left) {
+                    cur.leftChild = child;
+                } else {
+                    cur.rightChild = child;
+                }
+                length += 1;
+                return true;
+            } else {
+                return insert(child, value);
+            }
+        }
     }
 
     @Override
-    public void remove(T value) {
-
+    public boolean remove(T value) {
+        if (value == null) return false;
+        return false;
     }
 
     @Override
@@ -72,7 +93,7 @@ public class BinaryTree<T extends Comparable> implements Tree<T> {
     private BinaryNode<T> find(boolean left, BinaryNode<T> node) {
         BinaryNode<T> child = left ? node.leftChild : node.rightChild;
         if (child == null) return node;
-        return find(left, node);
+        return find(left, child);
     }
 
     @Override

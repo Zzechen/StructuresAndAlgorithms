@@ -18,7 +18,7 @@ public interface Tree<T> {
 
     void insert(T value);
 
-    void remove(T value);
+    boolean remove(T value);
 
     T findMin();
 
